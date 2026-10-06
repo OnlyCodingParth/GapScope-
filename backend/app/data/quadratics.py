@@ -1,0 +1,60 @@
+MISCONCEPTIONS = [
+    ("M01", "Sign error", "Changes a sign while moving, expanding, or simplifying terms."),
+    ("M02", "Coefficient identification mistake", "Misidentifies a, b, or c in ax² + bx + c = 0."),
+    ("M03", "Quadratic formula misuse", "Uses the quadratic formula with an incorrect operation or grouping."),
+    ("M04", "Discriminant misunderstanding", "Draws an incorrect conclusion from b² − 4ac."),
+    ("M05", "Factorization mistake", "Chooses factors that do not reproduce the quadratic."),
+    ("M06", "Square and root mistake", "Forgets the plus/minus roots or mishandles a square root."),
+    ("M07", "Algebraic manipulation mistake", "Performs an invalid balancing or simplification step."),
+    ("M08", "Zero-product property misunderstanding", "Does not set each factor equal to zero."),
+    ("M09", "Prerequisite algebra weakness", "Has difficulty with integer operations or solving linear equations."),
+]
+
+QUESTIONS = [
+    ("Q01", "Solve x² − 5x + 6 = 0.", "factorization", "basic", ["x = 2 or 3", "x = −2 or −3", "x = 1 or 6", "x = 5 or 6"], "x = 2 or 3"),
+    ("Q02", "Which factors equal x² + 7x + 12?", "factorization", "basic", ["(x + 3)(x + 4)", "(x − 3)(x − 4)", "(x + 2)(x + 6)", "(x − 3)(x + 4)"], "(x + 3)(x + 4)"),
+    ("Q03", "For 2x² − 3x − 5 = 0, what are a, b, and c?", "coefficient identification", "basic", ["a = 2, b = −3, c = −5", "a = 2, b = 3, c = −5", "a = −2, b = −3, c = 5", "a = 2, b = −3, c = 5"], "a = 2, b = −3, c = −5"),
+    ("Q04", "Solve x² = 49.", "square roots", "basic", ["x = 7 or −7", "x = 7", "x = ±49", "x = −7"], "x = 7 or −7"),
+    ("Q05", "Solve (x − 4)(x + 1) = 0.", "zero-product property", "basic", ["x = 4 or −1", "x = 3", "x = 4 and −1", "x = −4 or 1"], "x = 4 or −1"),
+    ("Q06", "What is the discriminant of x² + 4x + 8 = 0?", "discriminant", "intermediate", ["−16", "16", "−8", "24"], "−16"),
+    ("Q07", "How many real solutions does x² − 6x + 9 = 0 have?", "discriminant", "intermediate", ["One real solution", "Two real solutions", "No real solutions", "Three real solutions"], "One real solution"),
+    ("Q08", "Which expression correctly applies the quadratic formula to 3x² + 2x − 1 = 0?", "quadratic formula", "intermediate", ["x = [−2 ± √(2² − 4·3·(−1))]/6", "x = [2 ± √(2² − 4·3·(−1))]/6", "x = [−2 ± √(2² − 4·3·1)]/3", "x = [−2 ± √(2²) − 4·3·(−1)]/6"], "x = [−2 ± √(2² − 4·3·(−1))]/6"),
+    ("Q09", "Solve 2x² + x − 3 = 0.", "factorization", "intermediate", ["x = 1 or −3/2", "x = 3 or −1/2", "x = −1 or 3/2", "x = 1 or 3/2"], "x = 1 or −3/2"),
+    ("Q10", "After adding 9 to both sides of x² − 6x = −9, what is the completed-square equation?", "completing the square", "intermediate", ["x² − 6x + 9 = 0", "x² − 6x + 9 = −18", "x² − 6x = 0", "x² − 6x − 9 = 0"], "x² − 6x + 9 = 0"),
+    ("Q11", "Solve x² + 2x − 15 = 0.", "factorization", "intermediate", ["x = 3 or −5", "x = 5 or −3", "x = 15 or −1", "x = −3 or −5"], "x = 3 or −5"),
+    ("Q12", "For x² + 2x + 5 = 0, which statement is true?", "discriminant", "intermediate", ["There are no real solutions", "There are two equal real solutions", "There are two distinct real solutions", "The discriminant is 1"], "There are no real solutions"),
+    ("Q13", "Solve 4x² − 12x = 0.", "common factor", "intermediate", ["x = 0 or 3", "x = 0 or −3", "x = 4 or −12", "x = 3 only"], "x = 0 or 3"),
+    ("Q14", "Solve x² − 2x − 1 = 0 using the quadratic formula.", "quadratic formula", "harder", ["x = 1 ± √2", "x = −1 ± √2", "x = (2 ± √2)/2", "x = 1 ± 2"], "x = 1 ± √2"),
+    ("Q15", "A rectangle has area 48 m² and length x + 2 m and width x m. Which equation models the area?", "modelling quadratics", "harder", ["x² + 2x − 48 = 0", "x² + 2x + 48 = 0", "2x − 48 = 0", "x² − 2x − 48 = 0"], "x² + 2x − 48 = 0"),
+    ("Q16", "If x = −2 is a root of x² + kx − 8 = 0, what is k?", "substitution and algebra", "harder", ["k = −2", "k = 2", "k = −6", "k = 6"], "k = −2"),
+]
+
+MAPPINGS = [
+    ("Q01", "x = −2 or −3", "M01"), ("Q01", "x = 1 or 6", "M05"), ("Q01", "x = 5 or 6", "M09"),
+    ("Q02", "(x − 3)(x − 4)", "M01"), ("Q02", "(x + 2)(x + 6)", "M05"), ("Q02", "(x − 3)(x + 4)", "M05"),
+    ("Q03", "a = 2, b = 3, c = −5", "M02"), ("Q03", "a = −2, b = −3, c = 5", "M02"), ("Q03", "a = 2, b = −3, c = 5", "M02"),
+    ("Q04", "x = 7", "M06"), ("Q04", "x = ±49", "M06"), ("Q04", "x = −7", "M06"),
+    ("Q05", "x = 3", "M08"), ("Q05", "x = 4 and −1", "M08"), ("Q05", "x = −4 or 1", "M01"),
+    ("Q06", "16", "M01"), ("Q06", "−8", "M07"), ("Q06", "24", "M04"),
+    ("Q07", "Two real solutions", "M04"), ("Q07", "No real solutions", "M04"), ("Q07", "Three real solutions", "M04"),
+    ("Q08", "x = [2 ± √(2² − 4·3·(−1))]/6", "M03"), ("Q08", "x = [−2 ± √(2² − 4·3·1)]/3", "M02"), ("Q08", "x = [−2 ± √(2²) − 4·3·(−1)]/6", "M03"),
+    ("Q09", "x = 3 or −1/2", "M05"), ("Q09", "x = −1 or 3/2", "M01"), ("Q09", "x = 1 or 3/2", "M01"),
+    ("Q10", "x² − 6x + 9 = −18", "M07"), ("Q10", "x² − 6x = 0", "M07"), ("Q10", "x² − 6x − 9 = 0", "M01"),
+    ("Q11", "x = 5 or −3", "M05"), ("Q11", "x = 15 or −1", "M09"), ("Q11", "x = −3 or −5", "M05"),
+    ("Q12", "There are two equal real solutions", "M04"), ("Q12", "There are two distinct real solutions", "M04"), ("Q12", "The discriminant is 1", "M04"),
+    ("Q13", "x = 0 or −3", "M01"), ("Q13", "x = 4 or −12", "M05"), ("Q13", "x = 3 only", "M08"),
+    ("Q14", "x = −1 ± √2", "M03"), ("Q14", "x = (2 ± √2)/2", "M03"), ("Q14", "x = 1 ± 2", "M03"),
+    ("Q15", "x² + 2x + 48 = 0", "M01"), ("Q15", "2x − 48 = 0", "M09"), ("Q15", "x² − 2x − 48 = 0", "M01"),
+    ("Q16", "k = 2", "M07"), ("Q16", "k = −6", "M07"), ("Q16", "k = 6", "M09"),
+]
+
+PREREQUISITES = [
+    ("integer operations", "algebraic manipulation"),
+    ("algebraic manipulation", "coefficient identification"),
+    ("algebraic manipulation", "factorization"),
+    ("coefficient identification", "quadratic formula"),
+    ("square roots", "completing the square"),
+    ("factorization", "zero-product property"),
+    ("zero-product property", "solving quadratic equations"),
+    ("quadratic formula", "solving quadratic equations"),
+]
